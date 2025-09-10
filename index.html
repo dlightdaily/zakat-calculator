@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakat Calculator - Calculate Your Islamic Charity</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Zakat Calculator</h1>
+                <p class="tagline">Calculate your Islamic charity obligation</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="intro">
+                <h2>Calculate Your Zakat</h2>
+                <p>Zakat is one of the five pillars of Islam and represents 2.5% of your wealth above the Nisab threshold. Use this calculator to determine your Zakat obligation based on your comprehensive net assets.</p>
+                <div class="nisab-info">
+                    <div class="nisab-card">
+                        <h3>Current Nisab Value</h3>
+                        <p class="nisab-value">$<span id="nisab-amount">10,034</span></p>
+                        <p class="nisab-desc">Based on 3 troy ounces of gold</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calculator">
+                <form id="zakat-form" class="calculator-form">
+                    <div class="form-section">
+                        <h3 class="section-title">Personal Assets</h3>
+                        
+                        <div class="input-group">
+                            <label for="cash">Personal cash on hand & in bank accounts</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="cash" name="cash" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="gold-silver">Total value of gold, silver & precious items</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="gold-silver" name="gold-silver" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="stocks">Total value of stocks, shares, bonds</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="stocks" name="stocks" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="dividends">Total value of shareholder dividends</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="dividends" name="dividends" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="retirement">Cash value of maximum withdrawal (minus early reductions, taxes, and penalties) of retirement accounts and pension plans</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="retirement" name="retirement" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="loans-given">Good loans to others expected to be paid back</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="loans-given" name="loans-given" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="receivables">Other expected receivables (estimated tax refunds, refundable deposits, expected salary or professional payments due by Zakat due date)</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="receivables" name="receivables" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Business Assets</h3>
+                        
+                        <div class="input-group">
+                            <label for="business-cash">Business cash on hand & in bank accounts</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="business-cash" name="business-cash" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="inventory">Net value of business inventory & trade goods</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="inventory" name="inventory" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="business-receivables">Total business receivables by Zakat due date</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="business-receivables" name="business-receivables" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="real-estate">Real estate properties' investment/sale value</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="real-estate" name="real-estate" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="fixed-assets">Net income from exploited fixed business assets (e.g. rental unit)</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="fixed-assets" name="fixed-assets" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="mobile-assets">Net income from exploited mobile business assets (cars you own or control and lease to others)</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="mobile-assets" name="mobile-assets" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Deductions</h3>
+                        
+                        <div class="input-group">
+                            <label for="debts">Necessary immediately due debts (rent, food, utilities, insurance, medical, education, transportation, etc. No long-term debts)</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="debts" name="debts" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="zakat-paid">Zakat paid in advance</label>
+                            <div class="input-wrapper">
+                                <span class="currency">$</span>
+                                <input type="number" id="zakat-paid" name="zakat-paid" placeholder="0" min="0" step="0.01">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-section">
+                        <div class="results-card">
+                            <div class="result-item">
+                                <span class="result-label">Total Assets:</span>
+                                <span class="result-value" id="total-assets">$0.00</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Total Deductions:</span>
+                                <span class="result-value" id="total-deductions">$0.00</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Net Zakatable Wealth:</span>
+                                <span class="result-value" id="net-wealth">$0.00</span>
+                            </div>
+                            <div class="result-item zakat-due">
+                                <span class="result-label">Total Zakat Due:</span>
+                                <span class="result-value" id="zakat-due">$0.00</span>
+                            </div>
+                            <div class="nisab-status" id="nisab-status">
+                                <p>Enter your assets above to calculate your Zakat obligation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button type="button" id="reset-btn" class="btn btn-secondary">Reset Calculator</button>
+                        <button type="button" id="calculate-btn" class="btn btn-primary">Calculate Zakat</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="info-section">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>What is Zakat?</h3>
+                        <p>Zakat is one of the five pillars of Islam, representing a form of almsgiving and religious tax. It is calculated as 2.5% of a Muslim's total savings and wealth above a minimum amount known as Nisab.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>What is Nisab?</h3>
+                        <p>Nisab is the minimum amount of wealth a Muslim must have before they are obligated to pay Zakat. It is equivalent to the value of 3 ounces of gold or 21 ounces of silver.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>When is Zakat Due?</h3>
+                        <p>Zakat becomes obligatory when a Muslim's wealth reaches the Nisab threshold and has been held for a full lunar year (Hawl). It must be paid annually.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Zakat Calculator. This tool is provided for educational purposes. Please consult with Islamic scholars for specific religious guidance.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
